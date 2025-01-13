@@ -6,24 +6,23 @@ import (
 	"encoding/json"
 	"errors"
 	"golang.org/x/oauth2"
-	"goth/internal/config"
-	"goth/internal/service/jwthelper"
-	"goth/internal/store"
 	"net/http"
 	"os"
+	"starterkit/internal/config"
+	"starterkit/internal/service/jwthelper"
 	"strconv"
 	"time"
 )
 
-type GoogleAuthHandler struct {
-	GoogleUserStore store.GoogleUserStore
-}
-
-func NewGoogleAuthHandler(googleUserStore store.GoogleUserStore) *GoogleAuthHandler {
-	return &GoogleAuthHandler{
-		googleUserStore,
-	}
-}
+//type GoogleAuthHandler struct {
+//	GoogleUserStore store.GoogleUserStore
+//}
+//
+//func NewGoogleAuthHandler(googleUserStore store.GoogleUserStore) *GoogleAuthHandler {
+//	return &GoogleAuthHandler{
+//		googleUserStore,
+//	}
+//}
 
 type GoogleUserInfo struct {
 	ID            string `json:"id"`

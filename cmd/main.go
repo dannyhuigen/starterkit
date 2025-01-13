@@ -12,6 +12,7 @@ import (
 	"os"
 	"os/signal"
 	"starterkit/internal/database"
+	"starterkit/internal/handlers"
 	"syscall"
 	"time"
 )
@@ -46,6 +47,7 @@ func main() {
 		r.Use(
 			middleware.Logger,
 		)
+		r.Get("/", handlers.IndexHandler)
 	})
 
 	killSig := make(chan os.Signal, 1)

@@ -4,6 +4,12 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"log"
+	"log/slog"
+	"os"
+	"strconv"
+	"sync"
+
 	"github.com/golang-migrate/migrate/v4"
 	_ "github.com/golang-migrate/migrate/v4/database/postgres"
 	_ "github.com/golang-migrate/migrate/v4/source/file"
@@ -11,11 +17,6 @@ import (
 	_ "github.com/jackc/pgx/v5"
 	_ "github.com/jackc/pgx/v5/stdlib"
 	"github.com/jmoiron/sqlx"
-	"log"
-	"log/slog"
-	"os"
-	"strconv"
-	"sync"
 )
 
 var sqlxConnection *sqlx.DB
